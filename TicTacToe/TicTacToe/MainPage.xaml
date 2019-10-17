@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TicTacToe"
+             x:Class="TicTacToe.MainPage">
+
+    
+    <Grid x:Name="ContentGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="Play Snakes And Ladders" HorizontalOptions="Center" 
+               Margin="0,3,0,3" />
+        <Grid x:Name="GameBoard" HeightRequest="500" WidthRequest="500" Grid.Row="1"
+              HorizontalOptions="Center" VerticalOptions="Center" Padding="0" Margin="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="snakesboard.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                   Aspect="AspectFill" Grid.ColumnSpan="10" Grid.RowSpan="10" />
+
+            <Image x:Name="ImagePlayer1" Source="ghost.png" Grid.Row="4" Grid.Column="0" HorizontalOptions="Center"
+                   VerticalOptions="Center" Aspect="AspectFill" />
+
+        </Grid>
+
+        <StackLayout Orientation="Horizontal" Grid.Row="2" Margin="10,2,10,2" >
+            <Entry x:Name="EntryNumber" Placeholder="6" />
+            <Button x:Name="BtnMovePlayer" Text="Move in Steps" Clicked="BtnMovePlayer_Clicked" />
+            <Button x:Name="BtnTranslateToPlayer" Text="TranslateTo" Clicked="BtnTranslateToPlayer_Clicked" />
+            <Label x:Name="LabelDetails" Margin="10,2,10,2" />
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>
